@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+.npm
+
+# Build caches
+.vite/
+dist/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Roofing_V2.0 dev artifacts (source — demo/ is the compiled output we DO commit)
+Roofing_V2.0/node_modules/
+Roofing_V2.0/dist/
+Roofing_V2.0/.vite/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.suo
+*.user

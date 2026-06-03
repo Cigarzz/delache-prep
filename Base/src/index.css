@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital,wght@0,400;0,900;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Instrument Serif", serif;
+  --font-sans: "IBM Plex Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-brand-accent: #BC4A24; /* Muted earthy rust */
+  --color-brand-olive: #43523D;  /* Forest/olive eucalyptus green */
+  --color-brand-bg: #F5F1EA;     /* Warm off-white independent magazine background */
+  --color-brand-dark: #1C1C1C;   /* Premium high-contrast charcoal black text */
+  --color-brand-light: #EFEAE0;  /* Subtle darker tone of the warm off-white for borders/cards */
+}
+
+body {
+  background-color: var(--color-brand-bg);
+  color: var(--color-brand-dark);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom editorial layout adjustments */
+.font-serif-display {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.font-serif-bold {
+  font-family: var(--font-serif);
+  font-weight: 900;
+}
+
+.font-mono-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* High contrast selection styles */
+::selection {
+  background-color: var(--color-brand-accent);
+  color: white;
+}

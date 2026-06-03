@@ -1,0 +1,6 @@
+{
+  "name": "Trade Mockup Prep",
+  "description": "Pre-call prep and consultation booking checklist for Australian trade business owners.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
