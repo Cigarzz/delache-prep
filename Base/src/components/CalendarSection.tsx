@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calendar, CheckCircle2, Clock, PhoneCall, Info, Copy, Check } from 'lucide-react';
+import { Calendar, CheckCircle2, Clock, Video, Info, Copy, Check } from 'lucide-react';
 
 interface CalendarProps {
   businessName: string;
@@ -55,11 +55,11 @@ export default function CalendarSection({ businessName, prospectName, bookedTime
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t border-[#1C1C1C]/5">
               <div className="space-y-2 text-xs text-[#555] font-sans">
                 <h4 className="font-bold text-[#1C1C1C] flex items-center gap-1.5">
-                  <PhoneCall size={14} className="text-[#BC4A24]" />
-                  <span>How I ring you:</span>
+                  <Video size={14} className="text-[#BC4A24]" />
+                  <span>How we connect:</span>
                 </h4>
                 <p className="leading-relaxed">
-                  I will call you directly on your mobile at exactly the time selected. No Zoom links, no fancy apps, and no login details to forget. Just a simple phone-call consultation.
+                  We will send a Zoom or Google Meet link directly to your email and calendar before our call. We'll hop on a quick screen-share to run through the strategy together.
                 </p>
               </div>
 
@@ -69,7 +69,7 @@ export default function CalendarSection({ businessName, prospectName, bookedTime
                   <span>Before we speak:</span>
                 </h4>
                 <p className="leading-relaxed">
-                  Make sure you have watched the 3-minute video and clicked around your website demo above. That way we don't stretch the 15 minutes explaining basics, we custom talk options.
+                  Make sure you have watched the 3-minute video and explored the automation systems above. That way we don't stretch the 15 minutes explaining basics, we custom talk options.
                 </p>
               </div>
             </div>

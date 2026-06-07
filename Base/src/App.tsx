@@ -24,11 +24,41 @@ export default function App() {
       const parsedDemo = searchParams.get('demo') || searchParams.get('Demo') || '';
       const parsedTime = searchParams.get('time') || searchParams.get('Time') || '';
       
+      let displayTime = '';
+      if (parsedTime) {
+        const cleanTime = parsedTime.trim();
+        const testDate = new Date(cleanTime);
+        if (!isNaN(testDate.getTime())) {
+          const aesTimeStr = cleanTime.includes('GMT') || cleanTime.includes('UTC') || cleanTime.includes('+')
+            ? cleanTime
+            : cleanTime + " GMT+1000";
+          const aesDate = new Date(aesTimeStr);
+          if (!isNaN(aesDate.getTime())) {
+            const weekday = new Intl.DateTimeFormat('en-US', { weekday: 'short', timeZone: 'Australia/Brisbane' }).format(aesDate);
+            const day = new Intl.DateTimeFormat('en-US', { day: 'numeric', timeZone: 'Australia/Brisbane' }).format(aesDate);
+            const month = new Intl.DateTimeFormat('en-US', { month: 'short', timeZone: 'Australia/Brisbane' }).format(aesDate);
+            
+            const timePartsString = new Intl.DateTimeFormat('en-US', {
+              hour: 'numeric',
+              minute: '2-digit',
+              hour12: false,
+              timeZone: 'Australia/Brisbane'
+            }).format(aesDate);
+            
+            const [hourStr, minuteStr] = timePartsString.split(':');
+            const h24 = parseInt(hourStr, 10) % 24;
+            const period = h24 >= 12 ? 'pm' : 'am';
+            const displayHour = h24 % 12 === 0 ? 12 : h24 % 12;
+            displayTime = `${weekday} ${day} ${month} · ${displayHour}:${minuteStr}${period}`;
+          }
+        }
+      }
+      
       setParams({
         name: parsedName,
         business: parsedBusiness,
         demo: parsedDemo,
-        time: parsedTime
+        time: displayTime
       });
     }
   }, []);
@@ -112,7 +142,7 @@ export default function App() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="font-mono font-bold text-[#BC4A24]">2.</span>
-                  <span><strong>Review Your Mockup:</strong> Scroll around the interactive template rendered below in section 02.</span>
+                  <span><strong>Explore the Automations:</strong> Check out how our automated systems capture, qualify, and book jobs in Section 02.</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="font-mono font-bold text-[#BC4A24]">3.</span>

@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital,wght@0,400;0,900;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./styles.css?v=1.0.1">
 </head>
 <body>
 
@@ -85,7 +85,7 @@
             </li>
             <li>
               <span class="step-num">2.</span>
-              <span><strong>Review Your Mockup:</strong> Scroll around the interactive template rendered below in Section 02.</span>
+              <span><strong>Explore the Automations:</strong> Check out how our automated systems capture, qualify, and book jobs in Section 02.</span>
             </li>
             <li>
               <span class="step-num">3.</span>
@@ -99,7 +99,7 @@
       </div>
     </section>
 
-    <!-- URL Presets Dashboard (Testing Control Panel) -->
+    <!-- URL Presets Dashboard (Testing Control Panel - Commented out for production)
     <section class="presets-panel">
       <div class="presets-header">
         <span class="presets-title">
@@ -138,6 +138,7 @@
         </div>
       </div>
     </section>
+    -->
 
     <!-- 2. THE VIDEO SECTION -->
     <section class="video-section">
@@ -210,105 +211,622 @@
       </div>
     </section>
 
-    <!-- 3. INTERACTIVE WEBSITE PREVIEW SECTION -->
-    <section class="preview-section">
-      <div class="preview-header-card">
-        <h3 class="preview-card-title">
-          Section 02 // Premium responsive trade website mockup.
-        </h3>
-        <p class="preview-card-desc">
-          Below is a custom-coded website layout optimized for South-East Queensland mobile connections. We design these elements specifically to capture leads in 0.4 seconds without tracking bloat. Select device viewports to see how it flows.
+    <!-- 3. SVG INFOGRAPHICS SECTION -->
+    <section class="infographics-section" id="infographics-section">
+      <div class="infographics-header">
+        <span class="mono-tag section-tag">// Section 02 // Automated Sales Funnel Systems</span>
+        <h2 class="section-title">How it works on the tools.</h2>
+        <p class="infographics-desc">
+          We build automated client acquisition systems that work for you while you are on site, up a ladder, or having dinner. Below is exactly how these systems capture, qualify, and book jobs without you lifting a finger.
         </p>
       </div>
 
-      <!-- Mockup Browser Toolbar Controls -->
-      <div class="browser-toolbar">
-        <div class="toolbar-info">
-          <span class="mono-tag toolbar-tag">Section 02 // Custom Showcase</span>
-          <h3 class="toolbar-title">Website Mockup for <span id="toolbar-business-title" class="dynamic-val">your business</span></h3>
+      <div class="infographics-grid">
+        <!-- Infographic 1: Google Review System (Full-Width) -->
+        <div class="infographic-card">
+          <div class="infographic-card-header">
+            <span class="mono-tag color-system-1">SYSTEM 01 // GOOGLE REVIEW AUTOMATION</span>
+            <h3 class="infographic-card-title">Automate Your Google Reviews</h3>
+            <p class="infographic-card-desc">Automatically turn completed jobs into 5-star Google reviews in your customer's voice, without any awkward conversations.</p>
+          </div>
+          <svg viewBox="0 35 900 335" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-labelledby="title-reviews desc-reviews">
+            <title id="title-reviews">Reviews that build themselves</title>
+            <desc id="desc-reviews">Meandering path showing how a completed job automatically turns into 5-star Google reviews.</desc>
+            <style>
+              .s1-title { font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(20px, 3.5vw, 24px); font-weight: 900; font-style: italic; fill: #1C1C1C; }
+              .s1-tag { font-family: 'JetBrains Mono', Courier, monospace; font-size: 10px; font-weight: bold; fill: #BC4A24; letter-spacing: 1.5px; }
+              .s1-beat-title { font-family: 'Instrument Serif', Georgia, serif; font-size: 18px; font-weight: 900; fill: #1C1C1C; text-anchor: middle; }
+              .s1-body { font-family: 'IBM Plex Sans', -apple-system, sans-serif; font-size: 12px; fill: #555555; text-anchor: middle; line-height: 1.4; }
+              .s1-takeaway { font-family: 'Instrument Serif', Georgia, serif; font-size: 21px; font-style: italic; fill: #BC4A24; text-anchor: middle; font-weight: bold; }
+              .s1-number { font-family: 'IBM Plex Sans', -apple-system, sans-serif; font-size: 11px; font-weight: bold; fill: #FFFFFF; text-anchor: middle; dominant-baseline: central; }
+              .s1-connector-line { stroke: #BC4A24; stroke-width: 2.2; stroke-dasharray: 5 7; fill: none; stroke-linecap: round; }
+              .s1-icon-circle { fill: rgba(188, 74, 36, 0.07); stroke: #BC4A24; stroke-width: 1.5; }
+              .s1-num-badge { fill: #BC4A24; }
+            </style>
+
+            <!-- Meandering path -->
+            <path d="M 120 180 C 230 180, 230 130, 340 130 C 450 130, 450 220, 560 220 C 670 220, 670 160, 780 160" class="s1-connector-line"/>
+
+            <!-- Beat 1 -->
+            <g>
+              <!-- Solid cover circle to hide path underneath -->
+              <circle cx="120" cy="180" r="24" fill="#FAF9F5" />
+              <circle cx="120" cy="180" r="24" class="s1-icon-circle" />
+              <circle cx="100" cy="160" r="10" class="s1-num-badge" />
+              <text x="100" y="160" class="s1-number">1</text>
+              <!-- Hammer / tools line icon -->
+              <g transform="translate(120, 180)">
+                <path d="M-6 6 L6 -6 M2 -10 L10 -2 M6 -6 L8 -8 M-8 8 C-10 10 -10 6 -8 8" stroke="#1C1C1C" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+              </g>
+              <text x="120" y="235" class="s1-beat-title">"Job done"</text>
+              <text x="120" y="260" class="s1-body">
+                <tspan x="120" dy="0">You finish up.</tspan>
+                <tspan x="120" dy="16">Customer's happy.</tspan>
+              </text>
+            </g>
+
+            <!-- Beat 2 -->
+            <g>
+              <circle cx="340" cy="130" r="24" fill="#FAF9F5" />
+              <circle cx="340" cy="130" r="24" class="s1-icon-circle" />
+              <circle cx="320" cy="110" r="10" class="s1-num-badge" />
+              <text x="320" y="110" class="s1-number">2</text>
+              <!-- SMS line icon -->
+              <g transform="translate(340, 130)">
+                <path d="M-8 -6 h16 a2 2 0 0 1 2 2 v6 a2 2 0 0 1 -2 2 h-8 l-4 3 v-3 h-4 a2 2 0 0 1 -2 -2 v-6 a2 2 0 0 1 2 -2 z" stroke="#1C1C1C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </g>
+              <text x="340" y="185" class="s1-beat-title">"Text goes out"</text>
+              <text x="340" y="210" class="s1-body">
+                <tspan x="340" dy="0">At the right time,</tspan>
+                <tspan x="340" dy="16">in your voice.</tspan>
+              </text>
+            </g>
+
+            <!-- Beat 3 -->
+            <g>
+              <circle cx="560" cy="220" r="24" fill="#FAF9F5" />
+              <circle cx="560" cy="220" r="24" class="s1-icon-circle" />
+              <circle cx="540" cy="200" r="10" class="s1-num-badge" />
+              <text x="540" y="200" class="s1-number">3</text>
+              <!-- Star click line icon -->
+              <g transform="translate(560, 220)">
+                <path d="M0 -9 L2.5 -3 L9 -3 L4 1 L6 7 L0 3.5 L-6 7 L-4 1 L-9 -3 L-2.5 -3 Z" stroke="#1C1C1C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </g>
+              <text x="560" y="275" class="s1-beat-title">"Five stars left"</text>
+              <text x="560" y="300" class="s1-body">
+                <tspan x="560" dy="0">They click, type a</tspan>
+                <tspan x="560" dy="16">few words, done.</tspan>
+              </text>
+            </g>
+
+            <!-- Beat 4 -->
+            <g>
+              <circle cx="780" cy="160" r="24" fill="#FAF9F5" />
+              <circle cx="780" cy="160" r="24" class="s1-icon-circle" />
+              <circle cx="760" cy="140" r="10" class="s1-num-badge" />
+              <text x="760" y="140" class="s1-number">4</text>
+              <!-- Google G Logo -->
+              <g transform="translate(768, 148) scale(0.6)">
+                <path d="M38.2 20.45c0-1.4-.13-2.76-.36-4.05H20v7.69h10.22c-.44 2.37-1.78 4.38-3.79 5.73v4.76h6.14c3.59-3.3 5.63-8.17 5.63-14.13z" fill="#4285F4"/>
+                <path d="M20 39c5.13 0 9.43-1.7 12.58-4.63l-6.14-4.76c-1.7.14-3.88.92-6.44.92-4.96 0-9.15-3.35-10.65-7.87H3.06v4.92C6.2 38.86 12.65 39 20 39z" fill="#34A853"/>
+                <path d="M9.35 22.66c-.38-1.14-.6-2.35-.6-3.6s.22-2.46.6-3.6v-4.92H3.06c-1.95 3.91-3.06 8.3-3.06 13.12s1.11 9.21 3.06 13.12l6.29-4.92c-1.5-4.52-1.5-7.87 0-12.72z" fill="#FBBC05"/>
+                <path d="M20 7.8c2.79 0 5.29.96 7.27 2.85l5.45-5.45C29.42 2.1 25.13 1 20 1 12.65 1 6.2 5.14 3.06 11.23l6.29 4.92c1.5-4.52 5.69-7.87 10.65-7.87z" fill="#EA4335"/>
+              </g>
+              <!-- Google mockup snippet -->
+              <g transform="translate(680, 40)">
+                <rect x="0" y="0" width="190" height="70" rx="5" fill="#FFFFFF" stroke="#DCD6C9" stroke-width="1.2" />
+                <text x="12" y="18" font-family="'IBM Plex Sans', sans-serif" font-size="10px" font-weight="bold" fill="#1A0DAB">Your Business Name</text>
+                <g transform="translate(12, 23)">
+                  <path d="M0 -4 L1 -1 L4 -1 L2 1 L3 4 L0 2 L-3 4 L-2 1 L-4 -1 L-1 -1 Z" fill="#F1C40F" transform="translate(0, 5)"/>
+                  <path d="M0 -4 L1 -1 L4 -1 L2 1 L3 4 L0 2 L-3 4 L-2 1 L-4 -1 L-1 -1 Z" fill="#F1C40F" transform="translate(10, 5)"/>
+                  <path d="M0 -4 L1 -1 L4 -1 L2 1 L3 4 L0 2 L-3 4 L-2 1 L-4 -1 L-1 -1 Z" fill="#F1C40F" transform="translate(20, 5)"/>
+                  <path d="M0 -4 L1 -1 L4 -1 L2 1 L3 4 L0 2 L-3 4 L-2 1 L-4 -1 L-1 -1 Z" fill="#F1C40F" transform="translate(30, 5)"/>
+                  <path d="M0 -4 L1 -1 L4 -1 L2 1 L3 4 L0 2 L-3 4 L-2 1 L-4 -1 L-1 -1 Z" fill="#F1C40F" transform="translate(40, 5)"/>
+                </g>
+                <text x="66" y="32" font-family="'IBM Plex Sans', sans-serif" font-size="8.5px" fill="#70757A">4.9 (147 reviews)</text>
+                <text x="12" y="48" font-family="'IBM Plex Sans', sans-serif" font-size="7.5px" fill="#70757A">Brisbane's top rated roof plumber...</text>
+              </g>
+              <text x="780" y="215" class="s1-beat-title">"Lives on Google"</text>
+              <text x="780" y="240" class="s1-body">
+                <tspan x="780" dy="0">Where your next customer</tspan>
+                <tspan x="780" dy="16">is already looking.</tspan>
+              </text>
+            </g>
+
+            <!-- Takeaway Line -->
+            <text x="450" y="350" class="s1-takeaway">Hundreds of reviews. None of them awkward to ask for.</text>
+          </svg>
         </div>
-        
-        <div class="toolbar-actions">
-          <!-- Mockup Theme Selector -->
-          <div class="accent-selector">
-            <span class="accent-label">Theme:</span>
-            <div class="theme-options">
-              <button class="theme-opt-btn active" data-theme="dark" title="Premium Dark Theme (Terracotta)">
-                <span class="theme-opt-dot" style="background: #BC4A24;"></span>
-                <span>Premium Dark</span>
-              </button>
-              <button class="theme-opt-btn" data-theme="light" title="Trust Light Theme (Cobalt Blue)">
-                <span class="theme-opt-dot" style="background: #1e40af;"></span>
-                <span>Trust Light</span>
-              </button>
+
+        <!-- Row for Infographics 2 and 3 (Side-by-Side on Desktop) -->
+        <div class="infographics-row-split">
+          <!-- Infographic 2: Missed Call Recovery (Narrow) -->
+          <div class="infographic-card">
+            <div class="infographic-card-header">
+              <span class="mono-tag color-system-2">SYSTEM 02 // MISSED CALL AUTO-RECOVERY</span>
+              <h3 class="infographic-card-title">Recover Every Missed Call</h3>
+              <p class="infographic-card-desc">When you're on a ladder or driving, our system automatically texts back missed calls instantly, saving the lead before they call a competitor.</p>
             </div>
-          </div>
+            <svg viewBox="0 100 420 550" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-labelledby="title-missed desc-missed">
+              <title id="title-missed">Every missed call becomes a booked job</title>
+              <desc id="desc-missed">Vertical zig-zag path illustrating the recovery of a missed call through automated text messaging.</desc>
+              <style>
+                .s2-title { font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(20px, 3.5vw, 24px); font-weight: 900; font-style: italic; fill: #1C1C1C; }
+                .s2-tag { font-family: 'JetBrains Mono', Courier, monospace; font-size: 10px; font-weight: bold; fill: #556F43; letter-spacing: 1.5px; }
+                .s2-beat-title { font-family: 'Instrument Serif', Georgia, serif; font-size: 18px; font-weight: 900; fill: #1C1C1C; text-anchor: start; }
+                .s2-beat-title-left { font-family: 'Instrument Serif', Georgia, serif; font-size: 18px; font-weight: 900; fill: #1C1C1C; text-anchor: end; }
+                .s2-body { font-family: 'IBM Plex Sans', -apple-system, sans-serif; font-size: 12.5px; fill: #555555; line-height: 1.4; text-anchor: start; }
+                .s2-body-left { font-family: 'IBM Plex Sans', -apple-system, sans-serif; font-size: 12.5px; fill: #555555; line-height: 1.4; text-anchor: end; }
+                .s2-takeaway { font-family: 'Instrument Serif', Georgia, serif; font-size: 19px; font-style: italic; fill: #556F43; text-anchor: middle; font-weight: bold; }
+                .s2-number { font-family: 'IBM Plex Sans', -apple-system, sans-serif; font-size: 11px; font-weight: bold; fill: #FFFFFF; text-anchor: middle; dominant-baseline: central; }
+                .s2-connector-line { stroke: #556F43; stroke-width: 2.2; stroke-dasharray: 5 7; fill: none; stroke-linecap: round; }
+                .s2-icon-circle { fill: rgba(85, 111, 67, 0.07); stroke: #556F43; stroke-width: 1.5; }
+                .s2-num-badge { fill: #556F43; }
+              </style>
 
-          <!-- Device Toggle Buttons -->
-          <div class="device-selector">
-            <button class="device-btn active" id="device-desktop-btn" title="Desktop Screen">
-              <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                <line x1="8" y1="21" x2="16" y2="21"></line>
-                <line x1="12" y1="17" x2="12" y2="21"></line>
-              </svg>
-            </button>
-            <button class="device-btn" id="device-mobile-btn" title="Mobile Screen">
-              <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                <line x1="12" y1="18" x2="12.01" y2="18"></line>
-              </svg>
-            </button>
-          </div>
+              <!-- Connector path: Top-Left -> Middle-Right -> Bottom-Left (Reverse '<' layout) -->
+              <path d="M 100 140 L 320 280 L 100 420" class="s2-connector-line"/>
 
-          <!-- Rebuild Button -->
-          <button class="rebuild-btn" id="rebuild-btn">
-            <svg id="rebuild-icon" viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path>
+              <!-- Beat 1: Top-Left -->
+              <g>
+                <!-- Cover circle to block connector line -->
+                <circle cx="100" cy="140" r="24" fill="#FAF9F5" style="fill: #FAF9F5 !important; opacity: 1 !important;"/>
+                <circle cx="100" cy="140" r="24" class="s2-icon-circle" />
+                <circle cx="80" cy="120" r="10" class="s2-num-badge" />
+                <text x="80" y="120" class="s2-number">1</text>
+                <!-- Ringing Phone icon -->
+                <g transform="translate(100, 140)">
+                  <rect x="-6" y="-11" width="12" height="22" rx="2" stroke="#1C1C1C" stroke-width="1.8" fill="none"/>
+                  <path d="M-10 -5 a6 6 0 0 0 0 10" stroke="#1C1C1C" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                  <path d="M10 -5 a6 6 0 0 1 0 10" stroke="#1C1C1C" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                </g>
+                <text x="155" y="135" class="s2-beat-title" text-anchor="start" style="text-anchor: start;">"Missed call"</text>
+                <text x="155" y="155" class="s2-body" text-anchor="start" style="text-anchor: start;">
+                  <tspan x="155" dy="0" text-anchor="start" style="text-anchor: start;">You're up a ladder. Hands full.</tspan>
+                  <tspan x="155" dy="16" text-anchor="start" style="text-anchor: start;">Normally, that's a lost lead.</tspan>
+                </text>
+              </g>
+
+              <!-- Beat 2: Middle-Right -->
+              <g>
+                <!-- Cover circle -->
+                <circle cx="320" cy="280" r="24" fill="#FAF9F5" style="fill: #FAF9F5 !important; opacity: 1 !important;"/>
+                <circle cx="320" cy="280" r="24" class="s2-icon-circle" />
+                <circle cx="300" cy="260" r="10" class="s2-num-badge" />
+                <text x="300" y="260" class="s2-number">2</text>
+                <!-- Auto text lightning / outgoing message -->
+                <g transform="translate(320, 280)">
+                  <path d="M1 -9 L-7 1 L-1 1 L-3 9 L5 -1 L-1 -1 Z" stroke="#1C1C1C" stroke-width="1.8" stroke-linejoin="round" fill="none"/>
+                </g>
+                <text x="265" y="275" class="s2-beat-title-left" text-anchor="end" style="text-anchor: end;">"Auto-text fires"</text>
+                <text x="265" y="295" class="s2-body-left" text-anchor="end" style="text-anchor: end;">
+                  <tspan x="265" dy="0" text-anchor="end" style="text-anchor: end;">Friendly message sent in seconds,</tspan>
+                  <tspan x="265" dy="16" text-anchor="end" style="text-anchor: end;">automatically starting a conversation.</tspan>
+                </text>
+              </g>
+
+              <!-- Beat 3: Bottom-Left -->
+              <g>
+                <!-- Cover circle -->
+                <circle cx="100" cy="420" r="24" fill="#FAF9F5" style="fill: #FAF9F5 !important; opacity: 1 !important;"/>
+                <circle cx="100" cy="420" r="24" class="s2-icon-circle" />
+                <circle cx="80" cy="400" r="10" class="s2-num-badge" />
+                <text x="80" y="400" class="s2-number">3</text>
+                <!-- Double message bubble icon -->
+                <g transform="translate(100, 420)">
+                  <path d="M-6 -4 h10 a1 1 0 0 1 1 1 v5 a1 1 0 0 1 -1 1 h-6 l-3 3 v-3 h-1 a1 1 0 0 1 -1 -1 v-5 a1 1 0 0 1 1 -1 z" stroke="#1C1C1C" stroke-width="1.8" fill="none"/>
+                </g>
+                <text x="155" y="415" class="s2-beat-title" text-anchor="start" style="text-anchor: start;">"They reply"</text>
+                <text x="155" y="435" class="s2-body" text-anchor="start" style="text-anchor: start;">
+                  <tspan x="155" dy="0" text-anchor="start" style="text-anchor: start;">Conversation starts.</tspan>
+                  <tspan x="155" dy="16" text-anchor="start" style="text-anchor: start;">Job stays alive while you're working.</tspan>
+                </text>
+              </g>
+
+              <!-- Text Message Mockup thread at bottom -->
+              <g transform="translate(80, 470)">
+                <!-- Bubble 1 -->
+                <path d="M 0 0 h 120 a 5 5 0 0 1 5 5 v 10 a 5 5 0 0 1 -5 5 h -110 l -5 4 v -4 a 5 5 0 0 1 -5 -5 z" fill="#EBE6DC"/>
+                <text x="10" y="13" font-family="'IBM Plex Sans', sans-serif" font-size="9px" fill="#1C1C1C">Hey mate, missed call?</text>
+                
+                <!-- Bubble 2 -->
+                <path d="M 250 28 h -180 a 5 5 0 0 0 -5 5 v 10 a 5 5 0 0 0 5 5 h 170 l 5 4 v -4 a 5 5 0 0 0 5 -5 z" fill="#556F43"/>
+                <text x="70" y="41" font-family="'IBM Plex Sans', sans-serif" font-size="8.5px" fill="#FFFFFF">Hey! Sorry missed you, up a ladder. Job details?</text>
+
+                <!-- Bubble 3 -->
+                <path d="M 0 56 h 160 a 5 5 0 0 1 5 5 v 10 a 5 5 0 0 1 -5 5 h -150 l -5 4 v -4 a 5 5 0 0 1 -5 -5 z" fill="#EBE6DC"/>
+                <text x="10" y="69" font-family="'IBM Plex Sans', sans-serif" font-size="9px" fill="#1C1C1C">Need a roof leak quote in Brisbane ASAP</text>
+              </g>
+
+              <!-- Takeaway Line -->
+              <text x="210" y="625" class="s2-takeaway">No more leads disappearing because you were on the tools.</text>
             </svg>
-            <span>Rebuild</span>
-          </button>
+          </div>
+
+          <!-- Infographic 3: Customer Enquiry Chatbot (Narrow) -->
+          <div class="infographic-card">
+            <div class="infographic-card-header">
+              <span class="mono-tag color-system-3">SYSTEM 03 // 24/7 AI RECEPTIONIST</span>
+              <h3 class="infographic-card-title">Capture After-Hours Enquiries</h3>
+              <p class="infographic-card-desc">An AI assistant qualifies leads and answers customer questions on your website at 9pm, booking jobs while you have dinner.</p>
+            </div>
+            <svg viewBox="0 100 420 560" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-labelledby="title-chatbot desc-chatbot">
+              <title id="title-chatbot">Your site talks to customers at 9pm</title>
+              <desc id="desc-chatbot">Vertical zig-zag path showing how an after-hours inquiry gets filtered and qualified by AI overnight.</desc>
+              <style>
+                .s3-title { font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(20px, 3.5vw, 24px); font-weight: 900; font-style: italic; fill: #1C1C1C; }
+                .s3-tag { font-family: 'JetBrains Mono', Courier, monospace; font-size: 10px; font-weight: bold; fill: #2A3A4A; letter-spacing: 1.5px; }
+                .s3-beat-title { font-family: 'Instrument Serif', Georgia, serif; font-size: 18px; font-weight: 900; fill: #1C1C1C; text-anchor: start; }
+                .s3-beat-title-left { font-family: 'Instrument Serif', Georgia, serif; font-size: 18px; font-weight: 900; fill: #1C1C1C; text-anchor: end; }
+                .s3-body { font-family: 'IBM Plex Sans', -apple-system, sans-serif; font-size: 12.5px; fill: #555555; line-height: 1.4; text-anchor: start; }
+                .s3-body-left { font-family: 'IBM Plex Sans', -apple-system, sans-serif; font-size: 12.5px; fill: #555555; line-height: 1.4; text-anchor: end; }
+                .s3-takeaway { font-family: 'Instrument Serif', Georgia, serif; font-size: 19px; font-style: italic; fill: #2A3A4A; text-anchor: middle; font-weight: bold; }
+                .s3-number { font-family: 'IBM Plex Sans', -apple-system, sans-serif; font-size: 11px; font-weight: bold; fill: #FFFFFF; text-anchor: middle; dominant-baseline: central; }
+                .s3-connector-line { stroke: #2A3A4A; stroke-width: 2.2; stroke-dasharray: 5 7; fill: none; stroke-linecap: round; }
+                .s3-icon-circle { fill: rgba(42, 58, 74, 0.07); stroke: #2A3A4A; stroke-width: 1.5; }
+                .s3-num-badge { fill: #2A3A4A; }
+              </style>
+
+              <!-- Crescent Moon representing 9pm -->
+              <g transform="translate(350, 105)">
+                <path d="M 12 0 A 10 10 0 1 0 22 10 A 8 8 0 1 1 12 0 Z" fill="#C68A35" opacity="0.85"/>
+              </g>
+
+              <!-- Connector path: Top-Right -> Middle-Left -> Bottom-Right (Standard '>' layout) -->
+              <path d="M 320 140 L 100 280 L 320 420" class="s3-connector-line"/>
+
+              <!-- Beat 1: Top-Right -->
+              <g>
+                <!-- Cover circle -->
+                <circle cx="320" cy="140" r="24" fill="#FAF9F5" style="fill: #FAF9F5 !important; opacity: 1 !important;"/>
+                <circle cx="320" cy="140" r="24" class="s3-icon-circle" />
+                <circle cx="300" cy="120" r="10" class="s3-num-badge" />
+                <text x="300" y="120" class="s3-number">1</text>
+                <!-- Question bubble icon -->
+                <g transform="translate(320, 140)">
+                  <path d="M-8 -6 h16 a2 2 0 0 1 2 2 v6 a2 2 0 0 1 -2 2 h-8 l-4 3 v-3 h-4 a2 2 0 0 1 -2 -2 v-6 a2 2 0 0 1 2 -2 z" stroke="#1C1C1C" stroke-width="1.8" fill="none"/>
+                  <text x="0" y="3" font-family="'IBM Plex Sans', sans-serif" font-size="10px" font-weight="bold" fill="#1C1C1C" text-anchor="middle">?</text>
+                </g>
+                <text x="265" y="135" class="s3-beat-title-left" text-anchor="end" style="text-anchor: end;">"Question comes in"</text>
+                <text x="265" y="155" class="s3-body-left" text-anchor="end" style="text-anchor: end;">
+                  <tspan x="265" dy="0" text-anchor="end" style="text-anchor: end;">Someone's deciding between</tspan>
+                  <tspan x="265" dy="16" text-anchor="end" style="text-anchor: end;">you and the next bloke at 9pm.</tspan>
+                </text>
+              </g>
+
+              <!-- Beat 2: Middle-Left -->
+              <g>
+                <!-- Cover circle -->
+                <circle cx="100" cy="280" r="24" fill="#FAF9F5" style="fill: #FAF9F5 !important; opacity: 1 !important;"/>
+                <circle cx="100" cy="280" r="24" class="s3-icon-circle" />
+                <circle cx="80" cy="260" r="10" class="s3-num-badge" />
+                <text x="80" y="260" class="s3-number">2</text>
+                <!-- AI spark/star icon -->
+                <g transform="translate(100, 280)">
+                  <path d="M0 -9 L2.5 -2.5 L9 0 L2.5 2.5 L0 9 L-2.5 2.5 L-9 0 L-2.5 -2.5 Z" stroke="#1C1C1C" stroke-width="1.8" fill="none"/>
+                </g>
+                <text x="155" y="275" class="s3-beat-title" text-anchor="start" style="text-anchor: start;">"AI answers & qualifies"</text>
+                <text x="155" y="295" class="s3-body" text-anchor="start" style="text-anchor: start;">
+                  <tspan x="155" dy="0" text-anchor="start" style="text-anchor: start;">Replies in your tone, instantly.</tspan>
+                  <tspan x="155" dy="16" text-anchor="start" style="text-anchor: start;">Filters out tire-kickers automatically.</tspan>
+                </text>
+              </g>
+
+              <!-- Beat 3: Bottom-Right -->
+              <g>
+                <!-- Cover circle -->
+                <circle cx="320" cy="420" r="24" fill="#FAF9F5" style="fill: #FAF9F5 !important; opacity: 1 !important;"/>
+                <circle cx="320" cy="420" r="24" class="s3-icon-circle" />
+                <circle cx="300" cy="400" r="10" class="s3-num-badge" />
+                <text x="300" y="400" class="s3-number">3</text>
+                <!-- Smartphone envelope icon -->
+                <g transform="translate(320, 420)">
+                  <rect x="-6" y="-11" width="12" height="22" rx="2" stroke="#1C1C1C" stroke-width="1.8" fill="none"/>
+                  <path d="M-4 -3 L0 1 L4 -3" stroke="#1C1C1C" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                </g>
+                <text x="265" y="415" class="s3-beat-title-left" text-anchor="end" style="text-anchor: end;">"Sent to your phone"</text>
+                <text x="265" y="435" class="s3-body-left" text-anchor="end" style="text-anchor: end;">
+                  <tspan x="265" dy="0" text-anchor="end" style="text-anchor: end;">You see the hot lead qualified</tspan>
+                  <tspan x="265" dy="16" text-anchor="end" style="text-anchor: end;">with your morning coffee.</tspan>
+                </text>
+              </g>
+
+              <!-- Coffee & Phone Mockup at bottom -->
+              <g transform="translate(80, 470)">
+                <!-- Coffee cup -->
+                <g transform="translate(150, 20)">
+                  <path d="M-15 15 L15 15" stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M-10 -5 C-10 10 10 10 10 -5 Z" fill="#FAF9F5" stroke="#1C1C1C" stroke-width="1.5" stroke-linejoin="round"/>
+                  <path d="M10 -2 C14 -2 14 6 10 6" fill="none" stroke="#1C1C1C" stroke-width="1.5"/>
+                  <path d="M-4 -10 Q-6 -15 -4 -20" stroke="#C68A35" stroke-width="1" fill="none" stroke-linecap="round"/>
+                  <path d="M2 -10 Q0 -15 2 -20" stroke="#C68A35" stroke-width="1" fill="none" stroke-linecap="round"/>
+                </g>
+                <!-- Glow phone notification -->
+                <g transform="translate(0, 5)">
+                  <rect x="-3" y="-3" width="136" height="56" rx="8" fill="rgba(198, 138, 53, 0.1)"/>
+                  <rect x="0" y="0" width="130" height="50" rx="6" fill="#FFFFFF" stroke="#DCD6C9" stroke-width="1.5"/>
+                  <rect x="5" y="5" width="120" height="40" rx="3" fill="#2A3A4A"/>
+                  <text x="10" y="16" font-family="'IBM Plex Sans', sans-serif" font-size="7.5px" font-weight="bold" fill="#FFFFFF">★ NEW LEAD QUALIFIED</text>
+                  <text x="10" y="27" font-family="'IBM Plex Sans', sans-serif" font-size="7px" fill="#DCD6C9">Mick (Brisbane) - metal roof</text>
+                  <text x="10" y="37" font-family="'IBM Plex Sans', sans-serif" font-size="6.5px" fill="#FAF9F5">Budget: $4.5k | Ready to book</text>
+                </g>
+              </g>
+
+              <!-- Takeaway Line -->
+              <text x="210" y="625" class="s3-takeaway">Your business keeps working while you sleep.</text>
+            </svg>
+          </div>
         </div>
-      </div>
 
-      <!-- Browser Frame Wrapper -->
-      <div class="browser-frame" id="browser-frame">
-        
-        <!-- Browser Top Titlebar -->
-        <div class="browser-topbar">
-          <div class="browser-dots">
-            <span class="browser-dot red"></span>
-            <span class="browser-dot yellow"></span>
-            <span class="browser-dot green"></span>
+        <!-- Infographic 4: SMS to Customer List (Full-Width) -->
+        <div class="infographic-card">
+          <div class="infographic-card-header">
+            <span class="mono-tag color-system-4">SYSTEM 04 // DATABASE RE-ACTIVATION</span>
+            <h3 class="infographic-card-title">Fill Your Schedule Instantly</h3>
+            <p class="infographic-card-desc">Send a single targeted text broadcast to your database of past clients to instantly secure repeat business and fill quiet weeks.</p>
           </div>
-          <div class="browser-address" id="browser-address-bar">
-            yourbusiness.com.au
-          </div>
-          <div class="browser-badge">
-            PREVIEW
-          </div>
+          <svg viewBox="0 45 900 315" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-labelledby="title-smslist desc-smslist">
+            <title id="title-smslist">Fill your schedule with one text</title>
+            <desc id="desc-smslist">Meandering paths fanning out from a single message to multiple past clients, resulting in a full schedule.</desc>
+            <style>
+              .s4-title { font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(20px, 3.5vw, 24px); font-weight: 900; font-style: italic; fill: #1C1C1C; }
+              .s4-tag { font-family: 'JetBrains Mono', Courier, monospace; font-size: 10px; font-weight: bold; fill: #C68A35; letter-spacing: 1.5px; }
+              .s4-beat-title { font-family: 'Instrument Serif', Georgia, serif; font-size: 18px; font-weight: 900; fill: #1C1C1C; text-anchor: middle; }
+              .s4-body { font-family: 'IBM Plex Sans', -apple-system, sans-serif; font-size: 12px; fill: #555555; text-anchor: middle; line-height: 1.4; }
+              .s4-takeaway { font-family: 'Instrument Serif', Georgia, serif; font-size: 21px; font-style: italic; fill: #C68A35; text-anchor: middle; font-weight: bold; }
+              .s4-number { font-family: 'IBM Plex Sans', -apple-system, sans-serif; font-size: 11px; font-weight: bold; fill: #FFFFFF; text-anchor: middle; dominant-baseline: central; }
+              .s4-connector-line { stroke: #C68A35; stroke-width: 2.2; stroke-dasharray: 5 7; fill: none; stroke-linecap: round; }
+              .s4-icon-circle { fill: rgba(198, 138, 53, 0.07); stroke: #C68A35; stroke-width: 1.5; }
+              .s4-num-badge { fill: #C68A35; }
+            </style>
+
+            <!-- Fanning Paths -->
+            <path d="M 120 180 C 230 180, 230 180, 340 180" class="s4-connector-line"/>
+            <path d="M 340 180 C 410 130, 490 130, 560 180" class="s4-connector-line"/>
+            <path d="M 340 180 C 410 180, 490 180, 560 180" class="s4-connector-line"/>
+            <path d="M 340 180 C 410 230, 490 230, 560 180" class="s4-connector-line"/>
+            <path d="M 560 180 C 670 180, 670 180, 780 180" class="s4-connector-line"/>
+
+            <!-- Beat 1 -->
+            <g>
+              <circle cx="120" cy="180" r="24" fill="#FAF9F5"/>
+              <circle cx="120" cy="180" r="24" class="s4-icon-circle" />
+              <circle cx="100" cy="160" r="10" class="s4-num-badge" />
+              <text x="100" y="160" class="s4-number">1</text>
+              <!-- Calendar grid icon -->
+              <g transform="translate(120, 180)">
+                <rect x="-8" y="-8" width="16" height="16" rx="2" stroke="#1C1C1C" stroke-width="1.8" fill="none"/>
+                <line x1="-8" y1="-3" x2="8" y2="-3" stroke="#1C1C1C" stroke-width="1.5"/>
+              </g>
+              <!-- Mock empty calendar block -->
+              <g transform="translate(75, 50)">
+                <rect x="0" y="0" width="90" height="70" rx="5" fill="#FFFFFF" stroke="#DCD6C9" stroke-width="1.2" />
+                <rect x="0" y="0" width="90" height="14" rx="5" fill="#B0413E"/>
+                <text x="45" y="10" font-family="'IBM Plex Sans', sans-serif" font-size="7.5px" fill="#FFFFFF" text-anchor="middle" font-weight="bold">MON - WED</text>
+                <rect x="10" y="22" width="70" height="10" rx="2" fill="none" stroke="#B0413E" stroke-dasharray="2 2" stroke-width="1"/>
+                <text x="45" y="30" font-family="'IBM Plex Sans', sans-serif" font-size="6.5px" fill="#B0413E" text-anchor="middle">OPEN SLOT</text>
+                <rect x="10" y="36" width="70" height="10" rx="2" fill="none" stroke="#B0413E" stroke-dasharray="2 2" stroke-width="1"/>
+                <text x="45" y="44" font-family="'IBM Plex Sans', sans-serif" font-size="6.5px" fill="#B0413E" text-anchor="middle">OPEN SLOT</text>
+                <rect x="10" y="50" width="70" height="10" rx="2" fill="none" stroke="#B0413E" stroke-dasharray="2 2" stroke-width="1"/>
+                <text x="45" y="58" font-family="'IBM Plex Sans', sans-serif" font-size="6.5px" fill="#B0413E" text-anchor="middle">OPEN SLOT</text>
+              </g>
+              <text x="120" y="235" class="s4-beat-title">"Quiet week ahead"</text>
+              <text x="120" y="260" class="s4-body">
+                <tspan x="120" dy="0">Three open slots.</tspan>
+                <tspan x="120" dy="18">Need them filled.</tspan>
+              </text>
+            </g>
+
+            <!-- Beat 2 -->
+            <g>
+              <circle cx="340" cy="180" r="24" fill="#FAF9F5"/>
+              <circle cx="340" cy="180" r="24" class="s4-icon-circle" />
+              <circle cx="320" cy="160" r="10" class="s4-num-badge" />
+              <text x="320" y="160" class="s4-number">2</text>
+              <!-- SMS broadcast icon -->
+              <g transform="translate(340, 180)">
+                <path d="M-8 -6 h16 a2 2 0 0 1 2 2 v6 a2 2 0 0 1 -2 2 h-8 l-4 3 v-3 h-4 a2 2 0 0 1 -2 -2 v-6 a2 2 0 0 1 2 -2 z" stroke="#1C1C1C" stroke-width="1.8" fill="none"/>
+                <path d="M12 -5 a6 6 0 0 1 0 10" stroke="#C68A35" stroke-width="1.5" fill="none"/>
+                <path d="M16 -9 a11 11 0 0 1 0 18" stroke="#C68A35" stroke-width="1.5" fill="none"/>
+              </g>
+              <text x="340" y="235" class="s4-beat-title">"One message sent"</text>
+              <text x="340" y="260" class="s4-body">
+                <tspan x="340" dy="0">Goes to every past</tspan>
+                <tspan x="340" dy="18">customer at once.</tspan>
+              </text>
+            </g>
+
+            <!-- Beat 3 -->
+            <g>
+              <circle cx="560" cy="180" r="24" fill="#FAF9F5"/>
+              <circle cx="560" cy="180" r="24" class="s4-icon-circle" />
+              <circle cx="540" cy="160" r="10" class="s4-num-badge" />
+              <text x="540" y="160" class="s4-number">3</text>
+              <!-- Multiple overlapping bubbles icon -->
+              <g transform="translate(560, 180)">
+                <path d="M-4 -4 h10 a1 1 0 0 1 1 1 v4 a1 1 0 0 1 -1 1 h-6 l-3 3 v-3 h-1 a1 1 0 0 1 -1 -1 v-4 a1 1 0 0 1 1 -1 z" stroke="#1C1C1C" stroke-width="1.5" fill="none"/>
+                <path d="M-10 -1 h8 a1 1 0 0 1 1 1 v4 a1 1 0 0 1 -1 1 h-4 l-2 2 v-2 h-2 a1 1 0 0 1 -1 -1 v-4 a1 1 0 0 1 1 -1 z" stroke="#C68A35" stroke-width="1.5" fill="none"/>
+              </g>
+              <text x="560" y="235" class="s4-beat-title">"Replies come in"</text>
+              <text x="560" y="260" class="s4-body">
+                <tspan x="560" dy="0">Bookings start landing</tspan>
+                <tspan x="560" dy="18">in your phone.</tspan>
+              </text>
+            </g>
+
+            <!-- Beat 4 -->
+            <g>
+              <circle cx="780" cy="180" r="24" fill="#FAF9F5"/>
+              <circle cx="780" cy="180" r="24" class="s4-icon-circle" />
+              <circle cx="760" cy="160" r="10" class="s4-num-badge" />
+              <text x="760" y="160" class="s4-number">4</text>
+              <!-- Full calendar icon -->
+              <g transform="translate(780, 180)">
+                <rect x="-8" y="-8" width="16" height="16" rx="2" stroke="#1C1C1C" stroke-width="1.8" fill="none"/>
+                <line x1="-8" y1="-3" x2="8" y2="-3" stroke="#1C1C1C" stroke-width="1.5"/>
+                <rect x="-4" y="0" width="3" height="3" fill="#C68A35"/>
+                <rect x="1" y="0" width="3" height="3" fill="#C68A35"/>
+                <rect x="1" y="4" width="3" height="3" fill="#C68A35"/>
+              </g>
+              <!-- Mock booked calendar block -->
+              <g transform="translate(735, 50)">
+                <rect x="0" y="0" width="90" height="70" rx="5" fill="#FFFFFF" stroke="#DCD6C9" stroke-width="1.2" />
+                <rect x="0" y="0" width="90" height="14" rx="5" fill="#556F43"/>
+                <text x="45" y="10" font-family="'IBM Plex Sans', sans-serif" font-size="7.5px" fill="#FFFFFF" text-anchor="middle" font-weight="bold">MON - WED</text>
+                <rect x="10" y="22" width="70" height="11" rx="2" fill="#556F43"/>
+                <text x="45" y="30" font-family="'IBM Plex Sans', sans-serif" font-size="6.5px" fill="#FFFFFF" text-anchor="middle" font-weight="bold">Dave - booked</text>
+                <rect x="10" y="36" width="70" height="11" rx="2" fill="#556F43"/>
+                <text x="45" y="44" font-family="'IBM Plex Sans', sans-serif" font-size="6.5px" fill="#FFFFFF" text-anchor="middle" font-weight="bold">Metal Roof Resto</text>
+                <rect x="10" y="50" width="70" height="11" rx="2" fill="#556F43"/>
+                <text x="45" y="58" font-family="'IBM Plex Sans', sans-serif" font-size="6.5px" fill="#FFFFFF" text-anchor="middle" font-weight="bold">Mick - booked</text>
+              </g>
+              <text x="780" y="235" class="s4-beat-title">"Schedule full"</text>
+              <text x="780" y="260" class="s4-body">
+                <tspan x="780" dy="0">No cold calling.</tspan>
+                <tspan x="780" dy="18">No ad spend.</tspan>
+              </text>
+            </g>
+
+            <!-- Takeaway Line -->
+            <text x="450" y="345" class="s4-takeaway">Your old customers are your easiest new bookings.</text>
+          </svg>
         </div>
 
-        <!-- Browser Screen Wrapper (Holds dynamic screenshot or custom interactive site HTML) -->
-        <div class="browser-screen" id="browser-screen">
-          
-          <!-- Loading Mask Overlay -->
-          <div class="browser-loading-overlay" id="browser-loading-overlay">
-            <div class="loader-spinner"></div>
-            <span class="loader-text">Compiling Custom Layout...</span>
+        <!-- Infographic 5: Google Search / SEO (Full-Width) -->
+        <div class="infographic-card">
+          <div class="infographic-card-header">
+            <span class="mono-tag color-system-5">SYSTEM 05 // LOCAL SEO SEARCH CAPTURE</span>
+            <h3 class="infographic-card-title">Show Up When They're Ready to Book</h3>
+            <p class="infographic-card-desc">Rank at the top of Google searches and local maps to capture high-intent prospects who are actively looking for a trade near them.</p>
           </div>
+          <svg viewBox="0 60 900 330" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-labelledby="title-seo desc-seo">
+            <title id="title-seo">Show up when they're already looking</title>
+            <desc id="desc-seo">Ascending diagonal curve showing how a Google search for local roofers maps directly to organic ranking, traffic, and high-intent phone call leads.</desc>
+            <style>
+              .s5-title { font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(20px, 3.5vw, 24px); font-weight: 900; font-style: italic; fill: #1C1C1C; }
+              .s5-tag { font-family: 'JetBrains Mono', Courier, monospace; font-size: 10px; font-weight: bold; fill: #BC4A24; letter-spacing: 1.5px; }
+              .s5-beat-title { font-family: 'Instrument Serif', Georgia, serif; font-size: 18px; font-weight: 900; fill: #1C1C1C; text-anchor: middle; }
+              .s5-body { font-family: 'IBM Plex Sans', -apple-system, sans-serif; font-size: 12px; fill: #555555; text-anchor: middle; line-height: 1.4; }
+              .s5-takeaway { font-family: 'Instrument Serif', Georgia, serif; font-size: 21px; font-style: italic; fill: #BC4A24; text-anchor: middle; font-weight: bold; }
+              .s5-number { font-family: 'IBM Plex Sans', -apple-system, sans-serif; font-size: 11px; font-weight: bold; fill: #FFFFFF; text-anchor: middle; dominant-baseline: central; }
+              .s5-connector-line { stroke: #BC4A24; stroke-width: 2.2; stroke-dasharray: 5 7; fill: none; stroke-linecap: round; }
+              .s5-icon-circle { fill: rgba(188, 74, 36, 0.07); stroke: #BC4A24; stroke-width: 1.5; }
+              .s5-num-badge { fill: #BC4A24; }
+            </style>
 
-          <!-- CASE A: USER PARAM HAS A MOCKUP IMAGE (Visible only if param loaded) -->
-          <div class="screenshot-container hidden" id="screenshot-container">
-            <img src="" alt="Custom website mockup" class="screenshot-img" id="screenshot-image">
-          </div>
+            <!-- Rising path -->
+            <path d="M 120 250 C 230 250, 230 200, 340 200 C 450 200, 450 150, 560 150 C 670 150, 670 90, 780 90" class="s5-connector-line"/>
 
-          <!-- CASE B: DEFAULT INTERACTIVE FUNCTIONAL PREVIEW (Colorbond Visualizer + Before/After) -->
-          <!-- CASE B: ACTUAL LIVE REACT TEMPLATE IFRAME (Loads the built template from demo/index.html) -->
-          <div class="iframe-mockup-wrapper" id="iframe-mockup-wrapper">
-            <iframe src="demo/index.html" class="mockup-iframe" id="mockup-iframe" title="Interactive Trade Website Preview"></iframe>
-          </div>
+            <!-- Beat 1 -->
+            <g>
+              <circle cx="120" cy="250" r="24" fill="#FAF9F5"/>
+              <circle cx="120" cy="250" r="24" class="s5-icon-circle" />
+              <circle cx="100" cy="230" r="10" class="s5-num-badge" />
+              <text x="100" y="230" class="s5-number">1</text>
+              <!-- Magnifying glass search icon -->
+              <g transform="translate(120, 250)">
+                <circle cx="-2" cy="-2" r="5" stroke="#1C1C1C" stroke-width="1.8" fill="none"/>
+                <line x1="1.5" y1="1.5" x2="6" y2="6" stroke="#1C1C1C" stroke-width="1.8" stroke-linecap="round"/>
+              </g>
+              <!-- Google search bar mockup -->
+              <g transform="translate(30, 150)">
+                <rect x="0" y="0" width="180" height="28" rx="14" fill="#FFFFFF" stroke="#DCD6C9" stroke-width="1.2"/>
+                <g transform="translate(12, 7) scale(0.8)">
+                  <circle cx="6" cy="6" r="4" stroke="#70757A" stroke-width="1.2" fill="none"/>
+                  <line x1="9" y1="9" x2="13" y2="13" stroke="#70757A" stroke-width="1.2"/>
+                </g>
+                <text x="32" y="17" font-family="'IBM Plex Sans', sans-serif" font-size="9.5px" fill="#1C1C1C">roofer near me</text>
+              </g>
+              <text x="120" y="305" class="s5-beat-title">"Customer searches"</text>
+              <text x="120" y="330" class="s5-body">
+                <tspan x="120" dy="0">Types "roofer near me"</tspan>
+                <tspan x="120" dy="18">into Google.</tspan>
+              </text>
+            </g>
 
+            <!-- Beat 2 -->
+            <g>
+              <circle cx="340" cy="200" r="24" fill="#FAF9F5"/>
+              <circle cx="340" cy="200" r="24" class="s5-icon-circle" />
+              <circle cx="320" cy="180" r="10" class="s5-num-badge" />
+              <text x="320" y="180" class="s5-number">2</text>
+              <!-- Google G Logo -->
+              <g transform="translate(328, 188) scale(0.6)">
+                <path d="M38.2 20.45c0-1.4-.13-2.76-.36-4.05H20v7.69h10.22c-.44 2.37-1.78 4.38-3.79 5.73v4.76h6.14c3.59-3.3 5.63-8.17 5.63-14.13z" fill="#4285F4"/>
+                <path d="M20 39c5.13 0 9.43-1.7 12.58-4.63l-6.14-4.76c-1.7.14-3.88.92-6.44.92-4.96 0-9.15-3.35-10.65-7.87H3.06v4.92C6.2 38.86 12.65 39 20 39z" fill="#34A853"/>
+                <path d="M9.35 22.66c-.38-1.14-.6-2.35-.6-3.6s.22-2.46.6-3.6v-4.92H3.06c-1.95 3.91-3.06 8.3-3.06 13.12s1.11 9.21 3.06 13.12l6.29-4.92c-1.5-4.52-1.5-7.87 0-12.72z" fill="#FBBC05"/>
+                <path d="M20 7.8c2.79 0 5.29.96 7.27 2.85l5.45-5.45C29.42 2.1 25.13 1 20 1 12.65 1 6.2 5.14 3.06 11.23l6.29 4.92c1.5-4.52 5.69-7.87 10.65-7.87z" fill="#EA4335"/>
+              </g>
+              <!-- Google organic list mockup -->
+              <g transform="translate(250, 70)">
+                <rect x="0" y="0" width="180" height="75" rx="5" fill="#FFFFFF" stroke="#DCD6C9" stroke-width="1.2"/>
+                <text x="10" y="14" font-family="'IBM Plex Sans', sans-serif" font-size="6.5px" fill="#70757A">Sponsored  ·  competitor.com.au</text>
+                <text x="10" y="24" font-family="'IBM Plex Sans', sans-serif" font-size="8.5px" fill="#1a0dab">Brisbane Cheap Roofing Subby</text>
+                <line x1="5" y1="34" x2="175" y2="34" stroke="#EBE6DC" stroke-width="1"/>
+                <text x="10" y="45" font-family="'IBM Plex Sans', sans-serif" font-size="6.5px" fill="#2ECC71" font-weight="bold">#1 Organic  ·  yourbusiness.com.au</text>
+                <text x="10" y="55" font-family="'IBM Plex Sans', sans-serif" font-size="9px" font-weight="bold" fill="#1a0dab">Premium Metal Roofing Brisbane</text>
+                <text x="10" y="66" font-family="'IBM Plex Sans', sans-serif" font-size="7.5px" fill="#556F43">★★★★★ 4.9 Rating (147 reviews)</text>
+              </g>
+              <text x="340" y="255" class="s5-beat-title">"Your site ranks"</text>
+              <text x="340" y="280" class="s5-body">
+                <tspan x="340" dy="0">Top of the results.</tspan>
+                <tspan x="340" dy="18">Not page two.</tspan>
+              </text>
+            </g>
+
+            <!-- Beat 3 -->
+            <g>
+              <circle cx="560" cy="150" r="24" fill="#FAF9F5"/>
+              <circle cx="560" cy="150" r="24" class="s5-icon-circle" />
+              <circle cx="540" cy="130" r="10" class="s5-num-badge" />
+              <text x="540" y="130" class="s5-number">3</text>
+              <!-- Click cursor icon -->
+              <g transform="translate(560, 150) rotate(-20)">
+                <path d="M0 0 L5 14 L2 10 L-3 13 Z" stroke="#1C1C1C" stroke-width="1.8" fill="none"/>
+              </g>
+              <!-- Web mockup badge -->
+              <g transform="translate(515, 30)">
+                <rect x="0" y="0" width="90" height="70" rx="5" fill="#FFFFFF" stroke="#DCD6C9" stroke-width="1.2"/>
+                <rect x="0" y="0" width="90" height="14" rx="5" fill="#1C1C1C"/>
+                <circle cx="8" cy="7" r="2" fill="#BC4A24"/>
+                <path d="M15 42 L35 28 L55 38 L75 22" stroke="#BC4A24" stroke-width="1.5" fill="none"/>
+                <text x="45" y="58" font-family="'IBM Plex Sans', sans-serif" font-size="6.5px" fill="#70757A" text-anchor="middle" font-weight="bold">PREMIUM ROOF PLUMBING</text>
+              </g>
+              <text x="560" y="205" class="s5-beat-title">"They click through"</text>
+              <text x="560" y="230" class="s5-body">
+                <tspan x="560" dy="0">See your work, your</tspan>
+                <tspan x="560" dy="18">reviews, your number.</tspan>
+              </text>
+            </g>
+
+            <!-- Beat 4 -->
+            <g>
+              <circle cx="780" cy="90" r="24" fill="#FAF9F5"/>
+              <circle cx="780" cy="90" r="24" class="s5-icon-circle" />
+              <circle cx="760" cy="70" r="10" class="s5-num-badge" />
+              <text x="760" y="70" class="s5-number">4</text>
+              <!-- Phone handset line icon -->
+              <g transform="translate(780, 90)">
+                <rect x="-6" y="-11" width="12" height="22" rx="2" stroke="#1C1C1C" stroke-width="1.8" fill="none"/>
+                <path d="M-3 0 L-1 2 L3 -2" stroke="#556F43" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+              </g>
+              <!-- Lead landing bubble -->
+              <g transform="translate(730, 10)">
+                <rect x="0" y="0" width="100" height="38" rx="5" fill="#FFFFFF" stroke="#DCD6C9" stroke-width="1.2"/>
+                <rect x="4" y="4" width="92" height="30" rx="3" fill="#556F43"/>
+                <text x="50" y="15" font-family="'IBM Plex Sans', sans-serif" font-size="7.5px" fill="#FFFFFF" text-anchor="middle" font-weight="bold">★ PHONE CALL RINGING</text>
+                <text x="50" y="25" font-family="'IBM Plex Sans', sans-serif" font-size="6.5px" fill="#FFFFFF" text-anchor="middle">New Lead: Mick (Metal Roof)</text>
+              </g>
+              <text x="780" y="145" class="s5-beat-title">"Lead lands with you"</text>
+              <text x="780" y="170" class="s5-body">
+                <tspan x="780" dy="0">Form filled or call made</tspan>
+                <tspan x="780" dy="18">before they leave.</tspan>
+              </text>
+            </g>
+
+            <!-- Takeaway Line -->
+            <text x="450" y="375" class="s5-takeaway">The job's already going to someone. Make sure it's you.</text>
+          </svg>
         </div>
       </div>
     </section>
@@ -512,12 +1030,13 @@
           <div class="booked-info-col">
             <h4 class="booked-info-title">
               <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                <path d="M23 7l-7 5 7 5V7z"></path>
+                <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
               </svg>
-              <span>How we call you:</span>
+              <span>How we connect:</span>
             </h4>
             <p>
-              We will call your mobile number directly at exactly the time selected. No Zoom links to register or software to download. Just an honest phone chat.
+              We will send a Zoom or Google Meet link directly to your email and calendar before our call. We'll hop on a quick screen-share to run through the strategy together.
             </p>
           </div>
           <div class="booked-info-col">
@@ -660,6 +1179,6 @@
   </footer>
 
   <!-- Main JavaScript Logic -->
-  <script src="./script.js"></script>
+  <script src="./script.js?v=1.0.1"></script>
 </body>
 </html>

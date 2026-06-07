@@ -56,9 +56,46 @@ document.addEventListener('DOMContentLoaded', () => {
   injectText('#log-business', businessVal);
   injectText('#log-name', nameVal);
 
+  // Helper: format date to AEST (Australia/Brisbane)
+  function formatAESTDate(dateObj) {
+    const weekday = new Intl.DateTimeFormat('en-US', { weekday: 'short', timeZone: 'Australia/Brisbane' }).format(dateObj);
+    const day = new Intl.DateTimeFormat('en-US', { day: 'numeric', timeZone: 'Australia/Brisbane' }).format(dateObj);
+    const month = new Intl.DateTimeFormat('en-US', { month: 'short', timeZone: 'Australia/Brisbane' }).format(dateObj);
+    
+    const timePartsString = new Intl.DateTimeFormat('en-US', {
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: false,
+      timeZone: 'Australia/Brisbane'
+    }).format(dateObj);
+    
+    const [hourStr, minuteStr] = timePartsString.split(':');
+    const h24 = parseInt(hourStr, 10) % 24;
+    const period = h24 >= 12 ? 'pm' : 'am';
+    const displayHour = h24 % 12 === 0 ? 12 : h24 % 12;
+    
+    return `${weekday} ${day} ${month} · ${displayHour}:${minuteStr}${period}`;
+  }
+
+  let isBooked = false;
+  let formattedTime = '';
+  let dateObj = null;
+
   if (timeVal) {
-    injectText('#log-time', timeVal);
-    injectText('#booked-time-span', timeVal);
+    const cleanTimeVal = timeVal.trim();
+    const testDate = new Date(cleanTimeVal);
+    if (!isNaN(testDate.getTime())) {
+      const aesTimeStr = cleanTimeVal.includes('GMT') || cleanTimeVal.includes('UTC') || cleanTimeVal.includes('+')
+        ? cleanTimeVal
+        : cleanTimeVal + " GMT+1000";
+      
+      const aesDate = new Date(aesTimeStr);
+      if (!isNaN(aesDate.getTime())) {
+        dateObj = aesDate;
+        formattedTime = formatAESTDate(dateObj);
+        isBooked = true;
+      }
+    }
   }
 
   // ─── 2. CALENDAR VIEWPORT TOGGLE & LINKS GENERATOR ───
@@ -66,22 +103,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const calendarBookedCard = document.getElementById('calendar-booked-card');
   const calendarSchedulerCard = document.getElementById('calendar-scheduler-card');
 
-  if (timeVal) {
+  if (isBooked && dateObj) {
     // Show booked state, hide scheduler iframe slot
     calendarBookedCard.classList.remove('hidden');
     calendarSchedulerCard.classList.add('hidden');
 
+    // Inject formatted time
+    injectText('#log-time', formattedTime);
+    injectText('#booked-time-span', formattedTime);
+
     // Generate Calendar Add buttons dynamically
-    setupAddToCalendarButtons(timeVal);
+    setupAddToCalendarButtons(dateObj);
   } else {
     // Show scheduler GHL embed slot, hide booked card
     calendarBookedCard.classList.add('hidden');
     calendarSchedulerCard.classList.remove('hidden');
+    
+    // Clear/hide any broken log date
+    injectText('#log-time', 'Not Booked');
   }
 
   // Helper: setup calendar redirection links
-  function setupAddToCalendarButtons(timeString) {
-    const eventDate = parseConsultationTime(timeString);
+  function setupAddToCalendarButtons(eventDate) {
     const googleLink = document.getElementById('calendar-add-google');
     const appleLink = document.getElementById('calendar-add-apple');
 
@@ -95,8 +138,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const googleEnd = formatGoogleDate(endDate);
 
     const title = encodeURIComponent('Website Strategy Session with Delache Designs');
-    const details = encodeURIComponent(`Strategy consultation. We will call you directly at this time.\n\nReview your custom website mockup here: ${window.location.href}`);
-    const location = encodeURIComponent('Phone Call');
+    const details = encodeURIComponent(`Strategy consultation. Check your invite for the Zoom or Google Meet link.\n\nReview your custom strategy overview here: ${window.location.href}`);
+    const location = encodeURIComponent('Zoom / Google Meet');
 
     // Inject Google link
     googleLink.href = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${googleStart}/${googleEnd}&details=${details}&location=${location}`;
@@ -116,8 +159,8 @@ document.addEventListener('DOMContentLoaded', () => {
       `DTSTART:${formatIcsDate(startDate)}`,
       `DTEND:${formatIcsDate(endDate)}`,
       'SUMMARY:Website Strategy Session with Delache Designs',
-      `DESCRIPTION:We will call you directly on your phone. Review your mockup: ${window.location.href}`,
-      'LOCATION:Phone Call',
+      `DESCRIPTION:Check your invite for the Zoom or Google Meet link. Review your strategy overview: ${window.location.href}`,
+      'LOCATION:Zoom / Google Meet',
       'END:VEVENT',
       'END:VCALENDAR'
     ].join('\r\n');
@@ -193,169 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ─── 4. MOCKUP BROWSER CONTROLS & THEME TOGGLES ───
 
-  const browserFrame = document.getElementById('browser-frame');
-  const deviceDesktopBtn = document.getElementById('device-desktop-btn');
-  const deviceMobileBtn = document.getElementById('device-mobile-btn');
-  const rebuildBtn = document.getElementById('rebuild-btn');
-  const rebuildIcon = document.getElementById('rebuild-icon');
-  const loadingOverlay = document.getElementById('browser-loading-overlay');
-  const screenshotContainer = document.getElementById('screenshot-container');
-  const screenshotImage = document.getElementById('screenshot-image');
-  const iframeMockupWrapper = document.getElementById('iframe-mockup-wrapper');
-  const browserAddressBar = document.getElementById('browser-address-bar');
-
-  // Set mock address path on load
-  const formattedAddress = businessVal.toLowerCase().replace(/[^a-z0-9]/g, '') || 'yourtrade';
-  browserAddressBar.textContent = `${formattedAddress}.com.au`;
-
-  // Desktop/Mobile device preview toggler
-  deviceDesktopBtn.addEventListener('click', () => {
-    browserFrame.classList.remove('device-mobile');
-    deviceDesktopBtn.classList.add('active');
-    deviceMobileBtn.classList.remove('active');
-  });
-
-  deviceMobileBtn.addEventListener('click', () => {
-    browserFrame.classList.add('device-mobile');
-    deviceMobileBtn.classList.add('active');
-    deviceDesktopBtn.classList.remove('active');
-  });
-
-  // Check display cases (Static image demo vs Live HTML iframe)
-  if (demoVal) {
-    // Show image container, hide interactive mockup iframe
-    screenshotContainer.classList.remove('hidden');
-    if (iframeMockupWrapper) iframeMockupWrapper.classList.add('hidden');
-    screenshotImage.src = `demos/${demoVal}.png`;
-
-    // Add fallback if image fails to load
-    screenshotImage.onerror = () => {
-      screenshotContainer.classList.add('hidden');
-      if (iframeMockupWrapper) {
-        iframeMockupWrapper.classList.remove('hidden');
-        const iframe = document.getElementById('mockup-iframe');
-        if (iframe) iframe.src = 'demo/index.html' + window.location.search;
-      }
-    };
-  } else {
-    // Default interactive HTML view
-    screenshotContainer.classList.add('hidden');
-    if (iframeMockupWrapper) {
-      iframeMockupWrapper.classList.remove('hidden');
-      const iframe = document.getElementById('mockup-iframe');
-      if (iframe) iframe.src = 'demo/index.html' + window.location.search;
-    }
-  }
-
-  // Segmented Theme Mappings (Dark & Light Styles)
-  const styleThemes = {
-    dark: {
-      bodyClass: '', // Dark theme does not need light overrides class
-      primary: '#BC4A24', // Terracotta Orange primary
-      accent: '#d1582e', // Terracotta Accent
-      highlight: '#ff8c5a', // Highlight tint over dark backdrop
-      glow: 'rgba(255, 140, 90, 0.35)',
-      parentAccent: '#BC4A24',
-      parentAccentHover: '#9E3A1A',
-      brandBg: '#0a0a0a',       // Dark roofing page bg
-      brandCard: '#050505',     // Dark roofing card/root bg
-      brandText: '#f1f5f9'      // Light text for dark mode
-    },
-    light: {
-      bodyClass: 'theme-light', // Light theme activates overrides
-      primary: '#0b306e', // Trust Cobalt Blue
-      accent: '#1e40af', // Vibrant trust cobalt blue
-      highlight: '#38bdf8', // Sky blue highlights
-      glow: 'rgba(56, 189, 248, 0.35)',
-      parentAccent: '#1e40af',
-      parentAccentHover: '#0b2680',
-      brandBg: '#f8fafc',       // Light slate page bg
-      brandCard: '#ffffff',     // White card bg
-      brandText: '#1e293b'      // Dark text for light mode
-    }
-  };
-
-  let activeThemeMode = 'dark'; // Default to dark theme
-
-  const applyThemeStyle = (themeMode) => {
-    activeThemeMode = themeMode;
-    const theme = styleThemes[themeMode];
-    if (!theme) return;
-
-    // 1. Update active states on theme buttons
-    const themeButtons = document.querySelectorAll('.theme-opt-btn');
-    themeButtons.forEach(btn => {
-      if (btn.getAttribute('data-theme') === themeMode) {
-        btn.classList.add('active');
-      } else {
-        btn.classList.remove('active');
-      }
-    });
-
-    // 2. Apply styling changes to the parent page (dynamic accents)
-    document.documentElement.style.setProperty('--color-accent', theme.parentAccent);
-    document.documentElement.style.setProperty('--color-accent-hover', theme.parentAccentHover);
-
-    // 3. Apply changes inside the iframe
-    const iframe = document.getElementById('mockup-iframe');
-    if (iframe && iframe.contentDocument) {
-      const iframeBody = iframe.contentDocument.body;
-      const iframeDocEl = iframe.contentDocument.documentElement;
-
-      if (iframeBody) {
-        if (theme.bodyClass) {
-          iframeBody.classList.add(theme.bodyClass);
-        } else {
-          iframeBody.classList.remove('theme-light');
-        }
-      }
-
-      if (iframeDocEl) {
-        iframeDocEl.style.setProperty('--color-brand-primary', theme.primary);
-        iframeDocEl.style.setProperty('--color-brand-orange', theme.primary);
-        iframeDocEl.style.setProperty('--color-brand-accent', theme.accent);
-        iframeDocEl.style.setProperty('--color-brand-highlight', theme.highlight);
-        iframeDocEl.style.setProperty('--color-brand-glow', theme.glow);
-        iframeDocEl.style.setProperty('--color-brand-bg', theme.brandBg);
-        iframeDocEl.style.setProperty('--color-brand-card', theme.brandCard);
-      }
-    }
-  };
-
-  // Bind click events to Theme Selector buttons
-  const themeOptBtns = document.querySelectorAll('.theme-opt-btn');
-  themeOptBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const selectedTheme = btn.getAttribute('data-theme');
-      applyThemeStyle(selectedTheme);
-    });
-  });
-
-  // Bind iframe load listener to apply style options immediately on load
-  const mockupIframe = document.getElementById('mockup-iframe');
-  if (mockupIframe) {
-    mockupIframe.addEventListener('load', () => {
-      applyThemeStyle(activeThemeMode);
-    });
-  }
-
-  // Rebuild / reload animation simulator
-  rebuildBtn.addEventListener('click', () => {
-    rebuildIcon.classList.add('spin');
-    loadingOverlay.classList.add('active');
-
-    // Reload iframe
-    if (mockupIframe) {
-      mockupIframe.src = mockupIframe.src;
-    }
-
-    setTimeout(() => {
-      rebuildIcon.classList.remove('spin');
-      loadingOverlay.classList.remove('active');
-    }, 850);
-  });
 
 
   // ─── 7. STRATEGY FORM WEBHOOK AJAX SUBMISSION ───
