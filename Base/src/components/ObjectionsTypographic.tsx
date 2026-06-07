@@ -30,7 +30,7 @@ export default function ObjectionsTypographic({ businessName }: ObjectionsProps)
     {
       num: '05',
       title: 'What if I don’t like the mockup?',
-      desc: 'Then we shake hands and walk away. That is why I build the initial draft first. It gives you a real tangible product to click around on and judge, rather than requiring you to buy a block of theoretical hours. If it does not fit your vibe, you haven’t spent a single brass razoo, and I keep the layout. No hard feelings, no high-pressure pushy followups.'
+      desc: 'We iterate on the design and work on things until you\'re 100% happy. The initial mockup is just our starting point. From there, I can refine the layout, update your current website with all of our custom automations and lead-capture systems, or completely build a brand new site from the ground up to meet your exact specifications. You only launch when it fits your business perfectly.'
     },
     {
       num: '06',
