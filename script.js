@@ -4,7 +4,7 @@
 
 // ─── CONFIGURATION CONSTANTS ───
 // Paste your GHL / Zapier webhook endpoint URL here:
-const WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/BrisbaneSwappableWebhookSlot';
+const WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/uNpijTJXkgTHkG4aTsRu/webhook-trigger/c4e561df-119b-4f3e-ba21-70f8980e9fd7';
 // Fallback phone and contact details branded for Delache Designs:
 const CONTACT_PHONE = '+61 416 831 736';
 const CONTACT_EMAIL = 'hello@delache.com.au';
